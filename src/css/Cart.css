@@ -95,3 +95,13 @@
 	color: white;
 	margin-bottom: 16px;
 }
+
+.lmj-cart-empty-text {
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	margin: 30px auto;
+	padding: 20px;
+	max-width: 300px;
+	line-height: 1.5;
+}

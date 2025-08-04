@@ -1,14 +1,19 @@
-import comomille from '../assets/images/comomille.jpg';
+import camomille from '../assets/images/camomille.jpg';
 import guimauve from '../assets/images/guimauve.jpg';
 import lavande from '../assets/images/lavande.jpg';
 import melisse from '../assets/images/melisse.jpg';
 import ortie from '../assets/images/ortie.jpg';
 import menthe from '../assets/images/menthe.jpg';
-import soucis_calendula from '../assets/images/soucis-calendula.jpg';
-import sucullente from '../assets/images/sucullent.jpg';
+import soucis_calendula from '../assets/images/souci-calendula.jpg';
+import succulente from '../assets/images/succulent.jpg';
 import valeriane from '../assets/images/valeriane-officinale.jpg';
 
-export const plantVertesList = [
+export const PlantesMedicinales = [
+    {
+        name: 'camomille',
+        image: camomille,
+        description : 'La camomille est une plante herbacée annuelle ou vivace, connue pour ses propriétés calmantes et digestives. Elle est souvent utilisée en infusion pour favoriser la détente.'
+    },
     {
         name: 'menthe',
         image: menthe,
@@ -40,8 +45,8 @@ export const plantVertesList = [
         description : 'Le souci (Calendula officinalis) est une plante herbacée annuelle, connue pour ses fleurs orange vif. Elle est souvent utilisée en infusion pour ses propriétés anti-inflammatoires et cicatrisantes.'
     },
     {
-        name: 'sucullente',
-        image: sucullente,
+        name: 'succulente',
+        image: succulente,
         description : 'La succulente est une plante charnue, capable de stocker de l’eau dans ses feuilles, tiges ou racines. Elle est souvent utilisée en décoration intérieure pour son aspect esthétique et sa facilité d’entretien.'
     },
     {

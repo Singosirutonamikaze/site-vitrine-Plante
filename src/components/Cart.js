@@ -41,7 +41,7 @@ function Cart({ cart, updateCart }) {
 					<button onClick={() => updateCart([])} className='lmj-cart-empty-button'>Vider le panier</button>
 				</div>
 			) : (
-				<div>Votre panier est vide</div>
+				<span className='lmj-cart-empty-text'>Votre panier est vide</span>
 			)}
 		</div>
 	) : (

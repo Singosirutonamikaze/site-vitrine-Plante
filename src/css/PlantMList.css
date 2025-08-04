@@ -1,0 +1,141 @@
+.plant-description-container {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin: auto;
+    overflow-y: auto; 
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+}
+
+.plant-description-container h2 {
+    font-size: 24px; 
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.plant-description-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.5; 
+}
+
+.plant-description-container img {
+    width: 120px; 
+    height: 120px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 3px solid #fff; 
+}
+
+.plant-description-container button {
+    padding: 12px 12px; 
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.plant-description-container button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+.lmj-plant-list_ {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.lmj-plant-item_ {
+    margin-bottom: 20px;
+    position: relative;
+    border: none;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.lmj-plant-item_ img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.view-details-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    transition: background-color 1s ease;
+}
+
+.lmj-plant-item_:hover .view-details-button {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}

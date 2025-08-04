@@ -2,28 +2,22 @@
 import React, { Component } from 'react'
 import '../css/Chart.css';
 import PlantMList from './PlantMList';
+import {PlantesMedicinales} from '../data/PlantDatas';
+
 
 class Chart extends Component {
   constructor(props) {
     super(props);
-    const savedCart = localStorage.getItem('cart')
     this.state = {
-      cart: savedCart ? JSON.parse(savedCart) : []
+      cart: PlantesMedicinales
     }
-  }
-
-  updateCart = (newCart) => {
-    this.setState({ cart: newCart });
-    localStorage.setItem('cart', JSON.stringify(newCart));
   }
 
   render() {
     const { cart } = this.state;
 
     return (
-      <div>
-        <h1>Mes plantes Médicinales</h1>
-        <p>Voici la liste de vos plantes médicinales :</p>
+      <div className="medicinal-plants-chart">
         <PlantMList plants={cart} addToCart={this.updateCart} />
       </div>
     )

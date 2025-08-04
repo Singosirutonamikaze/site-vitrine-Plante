@@ -1,0 +1,17 @@
+.medicinal-plants-chart {
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #fff;
+    margin: 20px auto;
+}
+
+.medicinal-plants-chart h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.medicinal-plants-chart p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
