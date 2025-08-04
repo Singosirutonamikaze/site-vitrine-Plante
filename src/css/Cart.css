@@ -1,0 +1,97 @@
+.lmj-cart {
+	color: white;
+	background-color: transparent;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	justify-content: flex-start;
+	width: 80%;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lmj-cart .lmj-cart-content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.lmj-cart .lmj-cart-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.lmj-cart-list .lmj-cart-item_ {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	border: 1px solid #ccc;
+	margin: 5px 0;
+	border-radius: 4px;
+	padding: 8px 16px;
+}
+
+.lmj-cart-empty-button {
+	background-color: #1fe605;
+	color: white;
+	border: 1px solid white;
+	border-radius: 4px;
+	padding: 8px 16px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.lmj-cart-empty-button:hover {
+	background-color: white;
+	color: black;
+}
+
+.lmj-cart-item-name {
+	flex: 1;
+}
+
+.lmj-cart-item-price {
+	flex: 1;
+}
+
+.lmj-cart-item-amount {
+	flex: 1;
+}
+
+.lmj-cart-item-total {
+	flex: 1;
+}
+
+.lmj-cart-item-remove {
+	flex: 0;
+}
+
+.lmj-cart-item-remove button {
+	background-color: transparent;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	transition: color 0.3s;
+}
+
+.lmj-cart-item-remove button:hover {
+	color: red;
+}
+
+.lmj-cart-total {
+	margin-top: 16px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 16px;
+}

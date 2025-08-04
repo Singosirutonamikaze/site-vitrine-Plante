@@ -1,0 +1,37 @@
+.lmj-categories {
+	text-align: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-top: 30px;
+	margin: 0 0 20px 0;
+}
+
+.lmj-categories-select {
+	margin-right: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 5px 10px;
+	background-color: #f9f9f9;
+	font-size: 16px;
+	color: var(--text);
+	cursor: pointer;
+	transition: border-color 0.3s ease;
+}
+
+.lmj-categories-button {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 2px 32px;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}

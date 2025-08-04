@@ -1,0 +1,26 @@
+.lmj-home {
+	background-image: url('../assets/images/menthe.jpg');
+	background-size: cover;
+	background-position: center;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.lmj-home h1 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.lmj-home p {
+	font-size: 16px;
+	color: #051635;
+	text-align: center;
+	max-width: 600px;
+    text-transform: italic;
+}
