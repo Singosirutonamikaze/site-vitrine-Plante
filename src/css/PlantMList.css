@@ -1,141 +1,234 @@
 .plant-description-container {
-    position: fixed; 
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh; 
-    background-color: rgba(0, 0, 0, 0.9); 
-    color: #fff;
-    padding: 30px;
-    border-radius: 15px; 
+    width: 92%;
+    max-width: 480px;
+    max-height: 88vh;
+    background-color: #ffffff;
+    color: var(--text);
+    border-radius: 12px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    animation: modalPop 0.22s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -47%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.plant-description-container .modal-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    justify-content: center;
-    transition: all 0.3s ease;
-    margin: auto;
-    overflow-y: auto; 
-    z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    padding: 4.8rem 3.2rem 3.2rem;
+    gap: 1.4rem;
 }
 
 .plant-description-container h2 {
-    font-size: 24px; 
-    margin-bottom: 15px;
+    font-size: 2.6rem;
+    margin-bottom: 0;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--text);
 }
 
 .plant-description-container p {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1.55rem;
+    margin-bottom: 0;
     text-align: center;
-    line-height: 1.5; 
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 420px;
 }
 
 .plant-description-container img {
-    width: 120px; 
-    height: 120px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 3px solid #fff; 
+    border-radius: 12px;
+    margin-bottom: 0;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--green-light);
 }
 
 .plant-description-container button {
-    padding: 12px 12px; 
-    background-color: #28a745;
+    padding: 1.4rem 3.2rem;
+    background-color: var(--green);
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    min-width: 120px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    min-width: 160px;
+    margin-top: 0;
 }
 
 .plant-description-container button:hover {
-    background-color: #218838;
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    background-color: #1e5528;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(45, 122, 58, 0.3);
 }
 
 .modal-backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     z-index: 999;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    display: block;
 }
 
 
+/* ── Topbar du modal ─────────────────────────────── */
+
+.close-button {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    transition: all 0.2s;
+    padding: 0;
+    z-index: 1;
+}
+
+.close-button:hover {
+    background: #fee2e2;
+    border-color: #f87171;
+    color: #3e0101;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* ── Contenu centré du modal ─────────────────────── */
+
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 4rem 2.4rem 4rem;
+    gap: 1.4rem;
+}
+
+.add-to-cart-button {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.add-to-cart-button:hover {
+    background: #15803d;
+}
+
+.plant-price {
+    font-weight: 700;
+    color: var(--green);
+    font-size: 1.6rem;
+}
+
+
+/* ── Grille plantes médicinales ───────────────────── */
+
 .lmj-plant-list_ {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px auto;
+    padding: 24px;
+    margin: 0 auto;
     max-width: 100%;
     box-sizing: border-box;
 }
 
 .lmj-plant-item_ {
-    margin-bottom: 20px;
     position: relative;
-    border: none;
-    width: 300px;
-    height: 300px;
-    box-sizing: border-box;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    aspect-ratio: 1;
+}
+
+.lmj-plant-item_:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
 .lmj-plant-item_ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px 5px 0 0;
-    box-sizing: border-box;
-    border-radius: 5px;
+    display: block;
 }
 
 .view-details-button {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-color: transparent;
-    color: #000;
-    display: flex;
+    color: transparent;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     padding: 20px;
     border: none;
     cursor: pointer;
     display: none;
-    transition: background-color 1s ease;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
 }
 
 .lmj-plant-item_:hover .view-details-button {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(15, 23, 42, 0.6);
     color: #fff;
+    border-radius: 0;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 }

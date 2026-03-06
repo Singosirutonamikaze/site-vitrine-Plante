@@ -1,17 +1,44 @@
 .medicinal-plants-chart {
-    padding: 20px;
-    background-color: transparent;
-    border-radius: 5px;
-    color: #fff;
-    margin: 20px auto;
+    background-color: var(--surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+.lmj-chart-header {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 2.4rem 2.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.lmj-chart-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: #f0fdf4;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 2.4rem;
+    color: var(--green);
 }
 
 .medicinal-plants-chart h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+    padding-left: 0;
+    border-left: none;
 }
 
 .medicinal-plants-chart p {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1.35rem;
+    margin-bottom: 0;
+    color: var(--text-muted);
 }

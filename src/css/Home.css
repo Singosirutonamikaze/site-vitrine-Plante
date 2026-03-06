@@ -1,26 +1,365 @@
 .lmj-home {
-	background-image: url('../assets/images/menthe.jpg');
-	background-size: cover;
-	background-position: center;
-	padding: 32px;
+	padding: 2rem 0 4rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
+	width: 100%;
+}
+
+
+/* ── HERO SPLIT ──────────────────────────────────────────── */
+
+.lmj-home-hero {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 52vh;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ── Panel gauche (clair) ─────────────────────────────────── */
+
+.lmj-hero-left {
+	background: #f0f7ec;
+	padding: 5.6rem 4rem 5.6rem 4.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2.4rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.lmj-hero-left::before {
+	content: '26';
+	position: absolute;
+	right: -1.6rem;
+	bottom: -2.4rem;
+	font-size: 18rem;
+	font-weight: 900;
+	color: rgba(22, 163, 74, 0.06);
+	line-height: 1;
+	pointer-events: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.lmj-hero-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--green);
+	text-transform: uppercase;
+	letter-spacing: 1.8px;
+}
+
+.lmj-hero-eyebrow::before {
+	content: '';
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--green);
+	flex-shrink: 0;
+}
+
+.lmj-hero-title {
+	font-size: 4rem;
+	font-weight: 800;
+	color: var(--text);
+	line-height: 1.1;
+	margin: 0;
+}
+
+.lmj-hero-title em {
+	font-style: normal;
+	color: var(--green);
+}
+
+.lmj-hero-desc {
+	font-size: 1.55rem;
+	color: var(--text-muted);
+	line-height: 1.65;
+	max-width: 360px;
+	margin: 0;
+}
+
+
+/* ── Panel droit (forêt) ──────────────────────────────────── */
+
+.lmj-hero-right {
+	background: #0f3d20;
+	padding: 3.6rem 3.2rem 3.6rem 4.8rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-    min-height: 100vh;
-    overflow: hidden;
+	gap: 2.8rem;
+	clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+	position: relative;
 }
 
-.lmj-home h1 {
-	font-size: 24px;
-	font-weight: bold;
-	margin-bottom: 16px;
+.lmj-hero-right::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+	background-size: 22px 22px;
+	pointer-events: none;
 }
 
-.lmj-home p {
-	font-size: 16px;
-	color: #051635;
+
+/* ── Cards plantes en cascade ─────────────────────────────── */
+
+.lmj-hero-cards-stack {
+	display: flex;
+	gap: 12px;
+	align-items: flex-end;
+	z-index: 1;
+}
+
+.lmj-hcard {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	overflow: hidden;
+	width: 116px;
+	transition: transform 0.22s ease;
+}
+
+.lmj-hcard:hover {
+	transform: translateY(-8px) !important;
+}
+
+.lmj-hcard--0 {
+	transform: translateY(14px);
+}
+
+.lmj-hcard--1 {
+	transform: translateY(-10px);
+}
+
+.lmj-hcard--2 {
+	transform: translateY(6px);
+}
+
+.lmj-hcard img {
+	width: 100%;
+	height: 108px;
+	object-fit: cover;
+	display: block;
+}
+
+.lmj-hcard-body {
+	padding: 8px 10px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.lmj-hcard-name {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #ffffff;
+	text-transform: capitalize;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.lmj-hcard-price {
+	font-size: 0.95rem;
+	color: #86efac;
+	font-weight: 600;
+}
+
+
+/* ── Boutons ──────────────────────────────────────────────── */
+
+.lmj-home-actions {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.lmj-btn-primary {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: var(--green);
+	color: #ffffff;
+	border: none;
+	border-radius: 8px;
+	padding: 1.2rem 2.6rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	box-shadow: 0 4px 14px rgba(22, 163, 74, 0.28);
+}
+
+.lmj-btn-primary:hover {
+	background: #15803d;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(22, 163, 74, 0.36);
+}
+
+.lmj-btn-secondary {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: transparent;
+	color: var(--green);
+	border: 2px solid var(--green);
+	border-radius: 8px;
+	padding: 1.2rem 2.6rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.lmj-btn-secondary:hover {
+	background: var(--green);
+	color: #ffffff;
+	border-color: var(--green);
+}
+
+
+/* ── Stats (panel droit) ─────────────────────────────────── */
+
+.lmj-hero-stats {
+	display: flex;
+	gap: 2.4rem;
+	padding-top: 1.8rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	width: 100%;
+	justify-content: center;
+	z-index: 1;
+}
+
+.lmj-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+}
+
+.lmj-stat-num {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #86efac;
+	line-height: 1;
+}
+
+.lmj-stat-label {
+	font-size: 1rem;
+	color: rgba(255, 255, 255, 0.6);
+	font-weight: 500;
+}
+
+.lmj-bestsellers {
+	width: 100%;
+	max-width: 900px;
+	padding: 0 1rem;
+}
+
+.lmj-bestsellers h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--text);
+	margin-bottom: 2rem;
+	padding-left: 1.2rem;
+	border-left: 4px solid var(--green);
+}
+
+.lmj-bestsellers-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+.lmj-bestseller-card {
+	background: var(--surface);
+	border-radius: 12px;
+	padding: 2rem 1.6rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	box-shadow: var(--shadow);
+	border: 1px solid var(--border);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lmj-bestseller-card:hover {
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-md);
+}
+
+.lmj-bestseller-card img {
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.lmj-bestseller-card h3 {
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--text);
+	text-transform: capitalize;
 	text-align: center;
-	max-width: 600px;
-    text-transform: italic;
+}
+
+.lmj-bestseller-price {
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--green);
+}
+
+@media (max-width: 768px) {
+	.lmj-home {
+		padding: 1.6rem 0 3rem;
+	}
+	.lmj-home-hero {
+		grid-template-columns: 1fr;
+		min-height: unset;
+		border-radius: 12px;
+	}
+	.lmj-hero-left {
+		padding: 3.6rem 2.4rem 3.2rem;
+	}
+	.lmj-hero-left::before {
+		font-size: 12rem;
+	}
+	.lmj-hero-title {
+		font-size: 2.8rem;
+	}
+	.lmj-hero-right {
+		clip-path: none;
+		padding: 2.8rem 2.4rem;
+	}
+	.lmj-hcard {
+		width: 100px;
+	}
+	.lmj-hcard img {
+		height: 88px;
+	}
+	.lmj-bestsellers-grid {
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: 12px;
+	}
+	.lmj-btn-primary, .lmj-btn-secondary {
+		padding: 1rem 2rem;
+		font-size: 1.4rem;
+	}
 }

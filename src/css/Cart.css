@@ -1,23 +1,28 @@
 .lmj-cart {
-	color: white;
-	background-color: transparent;
-	padding: 32px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 3.2rem;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	margin: auto;
-	justify-content: flex-start;
-	width: 80%;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	align-items: stretch;
+	box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+	.lmj-cart {
+		padding: 2rem 1.6rem;
+		border-radius: 12px;
+	}
 }
 
 .lmj-cart .lmj-cart-content {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: stretch;
+	gap: 12px;
 }
 
 .lmj-cart .lmj-cart-list {
@@ -26,49 +31,102 @@
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	gap: 10px;
 }
 
 .lmj-cart-list .lmj-cart-item_ {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
-	border: 1px solid #ccc;
-	margin: 5px 0;
-	border-radius: 4px;
-	padding: 8px 16px;
+	background: var(--surface-alt);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 1.2rem 1.6rem;
+	transition: background 0.2s;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.lmj-cart-list .lmj-cart-item_:hover {
+	background: #dceede;
 }
 
 .lmj-cart-empty-button {
-	background-color: #1fe605;
-	color: white;
-	border: 1px solid white;
-	border-radius: 4px;
-	padding: 8px 16px;
+	align-self: flex-end;
+	background: #dc2626;
+	color: #ffffff;
+	border: 1px solid #ef4444;
+	border-radius: 8px;
+	padding: 10px 20px;
 	cursor: pointer;
-	transition: background-color 0.3s, color 0.3s;
+	font-size: 1.4rem;
+	font-weight: 500;
+	margin-top: 16px;
+	transition: background 0.2s;
 }
 
 .lmj-cart-empty-button:hover {
-	background-color: white;
-	color: black;
+	background: #b91c1c;
+	color: #ffffff;
 }
 
 .lmj-cart-item-name {
 	flex: 1;
+	color: var(--text);
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-transform: capitalize;
 }
 
 .lmj-cart-item-price {
-	flex: 1;
+	color: var(--green);
+	font-weight: 600;
+	font-size: 1.4rem;
+	min-width: 90px;
+	text-align: right;
 }
 
 .lmj-cart-item-amount {
-	flex: 1;
+	color: var(--text);
+	font-size: 1.5rem;
+	font-weight: 700;
+	min-width: 28px;
+	text-align: center;
+}
+
+.lmj-cart-item-qty {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.lmj-qty-btn {
+	background: var(--surface-alt);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 1.6rem;
+	color: var(--text);
+	transition: background 0.2s;
+	padding: 0;
+}
+
+.lmj-qty-btn:hover {
+	background: #c6dcc7;
+	border-color: var(--green);
 }
 
 .lmj-cart-item-total {
-	flex: 1;
+	color: var(--text);
+	font-size: 1.4rem;
+	font-weight: 700;
+	min-width: 90px;
+	text-align: right;
 }
 
 .lmj-cart-item-remove {
@@ -76,32 +134,44 @@
 }
 
 .lmj-cart-item-remove button {
-	background-color: transparent;
-	color: white;
-	border: none;
+	background: #dc2626;
+	color: #ffffff;
+	border: 1px solid #ef4444;
+	border-radius: 6px;
+	width: 32px;
+	height: 32px;
 	cursor: pointer;
-	font-size: 16px;
-	transition: color 0.3s;
+	font-size: 1.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s;
+	margin-left: 12px;
 }
 
 .lmj-cart-item-remove button:hover {
-	color: red;
+	background: #9b1c1c;
+	color: #ffffff;
 }
 
 .lmj-cart-total {
-	margin-top: 16px;
-	font-size: 20px;
-	font-weight: bold;
-	color: white;
-	margin-bottom: 16px;
+	color: var(--text);
+	font-size: 1.8rem;
+	font-weight: 700;
+	text-align: right;
+	padding-top: 1.6rem;
+	border-top: 2px solid var(--border);
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+
+.lmj-cart-total-amount {
+	color: var(--green);
 }
 
 .lmj-cart-empty-text {
-	color: #fff;
-	font-size: 18px;
+	color: var(--text-muted);
+	font-size: 1.5rem;
 	text-align: center;
-	margin: 30px auto;
-	padding: 20px;
-	max-width: 300px;
-	line-height: 1.5;
+	padding: 32px 0;
 }

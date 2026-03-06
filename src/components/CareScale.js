@@ -1,14 +1,8 @@
 import Sun from '../assets/sun.svg'
 import Water from '../assets/water.svg'
-import React from 'react'
+import PropTypes from 'prop-types';
 
-// Ici, il s'agit d'une manière de faire.
-//Vous auriez aussi pu utiliser une fonction qui retourne l'élément souhaité, ou bien faire directement des conditions
-const quantityLabel = {
-    1: 'peu',
-    2: 'modérément',
-    3: 'beaucoup'
-}
+
 
 function CareScale({ scaleValue, careType }) {
     const range = [1, 2, 3]
@@ -20,15 +14,7 @@ function CareScale({ scaleValue, careType }) {
         )
 
     return (
-        <div
-            onClick={() =>
-                React.createElement(
-                    'div',
-                    {id: 'care-scale-message'},
-                    `Cette plante requiert ${quantityLabel[scaleValue]} ${careType === 'light' ? 'de lumière' : "d'arrosage"}`
-                )
-            }
-        >
+        <div>
             {range.map((rangeElem) =>
                 scaleValue >= rangeElem ? (
                     <span key={rangeElem.toString()}>{scaleType}</span>
@@ -37,5 +23,10 @@ function CareScale({ scaleValue, careType }) {
         </div>
     )
 }
+
+CareScale.propTypes = {
+    scaleValue: PropTypes.number.isRequired,
+    careType: PropTypes.oneOf(['light', 'water']).isRequired,
+};
 
 export default CareScale

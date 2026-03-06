@@ -1,41 +1,162 @@
 .lmj-shopping-list {
-	width: 100%;
+    width: 100%;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    padding-bottom: 24px;
 }
 
 .lmj-plant-list {
-	list-style-type: none;
-	padding: 32px;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
-	gap: 16px;
+    list-style-type: none;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+    gap: 16px;
     width: 100%;
 }
 
 .lmj-plant-list button {
-    background-color: #4CAF50;
+    background-color: var(--green);
     color: white;
     border: none;
     padding: 10px 20px;
     text-align: center;
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    gap: 6px;
+    font-size: 1.4rem;
+    font-weight: 600;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.lmj-plant-list button ion-icon {
+    font-size: 1rem;
 }
 
 .lmj-plant-list button:hover {
-    background-color: #45a049;
+    background-color: #1e5528;
 }
 
 .lmj-plant-item {
     align-items: center;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.lmj-plant-item:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ─── Header catalogue ─────────────────────────────── */
+
+.lmj-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 28px 32px 0;
+}
+
+.lmj-list-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.lmj-list-title ion-icon {
+    color: var(--green);
+    font-size: 1.8rem;
+}
+
+
+/* ─── Barre de recherche ────────────────────────────── */
+
+.lmj-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    padding: 8px 14px;
+    transition: border-color 0.2s;
+    min-width: 220px;
+}
+
+.lmj-search-bar:focus-within {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(45, 122, 58, 0.1);
+}
+
+.lmj-search-bar ion-icon {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.lmj-search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--text);
+    flex: 1;
+    min-width: 0;
+}
+
+.lmj-search-bar input::placeholder {
+    color: var(--text-muted);
+}
+
+.lmj-search-clear {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.lmj-search-clear:hover {
+    color: var(--text);
+}
+
+
+/* ─── État vide ────────────────────────────────────────── */
+
+.lmj-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 60px 32px;
+    color: var(--text-muted);
+}
+
+.lmj-empty-state ion-icon {
+    font-size: 3rem;
+    color: var(--border);
+}
+
+.lmj-empty-state p {
+    font-size: 1rem;
+    margin: 0;
 }

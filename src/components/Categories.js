@@ -1,4 +1,5 @@
 import '../css/Categories.css'
+import PropTypes from 'prop-types';
 
 function Categories({ setActiveCategory, categories, activeCategory }) {
 	return (
@@ -19,5 +20,11 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
 		</div>
 	)
 }
+
+Categories.propTypes = {
+	setActiveCategory: PropTypes.func.isRequired,
+	categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+	activeCategory: PropTypes.string.isRequired,
+};
 
 export default Categories

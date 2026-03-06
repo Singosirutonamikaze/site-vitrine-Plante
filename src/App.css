@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-*,
-*::before,
-*::after {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,18 +8,51 @@
 }
 
 :root {
-    --bg: rgb(15, 39, 80);
-    --white: #fff;
-    --text: rgb(8, 3, 31);
+    --sidebar-width: 220px;
+    --green: #16a34a;
+    --green-light: #4ade80;
+    --bg: #f1f5f9;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 html {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     font-size: 1.6rem;
+    min-height: 100vh;
     background: var(--bg);
-    box-sizing: border-box;
+    color: var(--text);
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-right: calc(var(--sidebar-width) + 3.2rem);
+    padding: 3rem 2.5rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-right: 0;
+        margin-top: 57px;
+        padding: 2rem 1.4rem;
+    }
 }

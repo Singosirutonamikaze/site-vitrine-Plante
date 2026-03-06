@@ -9,18 +9,19 @@
 
 .lmj-categories-select {
 	margin-right: 15px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	padding: 5px 10px;
-	background-color: #f9f9f9;
-	font-size: 16px;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 8px 14px;
+	background-color: var(--surface);
+	font-size: 1.4rem;
 	color: var(--text);
 	cursor: pointer;
 	transition: border-color 0.3s ease;
+	box-shadow: var(--shadow);
 }
 
 .lmj-categories-button {
-	background-color: #4CAF50;
+	background-color: var(--green);
 	color: white;
 	border: none;
 	padding: 10px 20px;
@@ -28,10 +29,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-decoration: none;
-	font-size: 16px;
+	font-size: 1.4rem;
+	font-weight: 600;
 	margin: 2px 32px;
 	cursor: pointer;
-	border-radius: 4px;
-	transition: background-color 0.3s ease;
+	border-radius: 8px;
+	transition: background-color 0.2s ease;
+}
+
+.lmj-categories-button:hover {
+	background-color: #1e5528;
 }

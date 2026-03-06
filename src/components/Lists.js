@@ -1,22 +1,11 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types';
 import ShoppingList from './ShoppingList'
 
 
 class Lists extends Component {
-    constructor(props) {
-        super(props)
-        const savedCart = localStorage.getItem('cart')
-        this.state = {
-            cart: savedCart ? JSON.parse(savedCart) : []
-        }
-    }
-
     render() {
-        const { cart } = this.state
-        const updateCart = (newCart) => {
-            this.setState({ cart: newCart })
-            localStorage.setItem('cart', JSON.stringify(newCart))
-        }
+        const { cart, updateCart } = this.props;
         return (
             <div>
                 <ShoppingList cart={cart} updateCart={updateCart} />
@@ -24,5 +13,10 @@ class Lists extends Component {
         )
     }
 }
+
+Lists.propTypes = {
+    cart: PropTypes.array.isRequired,
+    updateCart: PropTypes.func.isRequired,
+};
 
 export default Lists;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types';
 import '../css/Cart.css';
 
 function Cart({ cart, updateCart }) {
@@ -16,28 +17,51 @@ function Cart({ cart, updateCart }) {
 			{cart.length > 0 ? (
 				<div className='lmj-cart-content'>
 					<ul className='lmj-cart-list'>
-						{cart.map(({ name, price, amount}, index) => (
+						{cart.map(({ name, price, amount }, index) => (
 							<div key={`${name}-${index}`} className='lmj-cart-item_'>
 								<span className='lmj-cart-item-name'>{name}</span>
 								<span className='lmj-cart-item-price'>{price} frcfa</span>
-								<span className='lmj-cart-item-amount'>x {amount}</span>
+								<div className='lmj-cart-item-qty'>
+									<button
+										className='lmj-qty-btn'
+										onClick={() => {
+											if (amount <= 1) {
+												updateCart(cart.filter((_, i) => i !== index))
+											} else {
+												updateCart(cart.map((item, i) =>
+													i === index ? { ...item, amount: item.amount - 1 } : item
+												))
+											}
+										}}
+									>
+										<ion-icon name="remove-outline"></ion-icon>
+									</button>
+									<span className='lmj-cart-item-amount'>{amount}</span>
+									<button
+										className='lmj-qty-btn'
+										onClick={() => {
+											updateCart(cart.map((item, i) =>
+												i === index ? { ...item, amount: item.amount + 1 } : item
+											))
+										}}
+									>
+										<ion-icon name="add-outline"></ion-icon>
+									</button>
+								</div>
 								<span className='lmj-cart-item-total'>{price * amount} frcfa</span>
 								<span className='lmj-cart-item-remove'>
 									<button
 										onClick={() => {
-											const newCart = cart.filter(
-												(_, i) => i !== index
-											)
-											updateCart(newCart)
+											updateCart(cart.filter((_, i) => i !== index))
 										}}
 									>
-										&times;
+										<ion-icon name="trash-outline"></ion-icon>
 									</button>
 								</span>
 							</div>
 						))}
 					</ul>
-					<h3 className='lmj-cart-total'>Total :{total} frcfa</h3>
+					<h3 className='lmj-cart-total'>Total : <span className='lmj-cart-total-amount'>{total} frcfa</span></h3>
 					<button onClick={() => updateCart([])} className='lmj-cart-empty-button'>Vider le panier</button>
 				</div>
 			) : (
@@ -55,5 +79,14 @@ function Cart({ cart, updateCart }) {
 		</div>
 	)
 }
+
+Cart.propTypes = {
+	cart: PropTypes.arrayOf(PropTypes.shape({
+		name: PropTypes.string,
+		price: PropTypes.number,
+		amount: PropTypes.number,
+	})).isRequired,
+	updateCart: PropTypes.func.isRequired,
+};
 
 export default Cart
