@@ -5,10 +5,10 @@ import ShoppingList from './ShoppingList'
 
 class Lists extends Component {
     render() {
-        const { cart, updateCart } = this.props;
+        const { cart, updateCart, showToast } = this.props;
         return (
             <div>
-                <ShoppingList cart={cart} updateCart={updateCart} />
+                <ShoppingList cart={cart} updateCart={updateCart} showToast={showToast} />
             </div>
         )
     }
@@ -17,6 +17,7 @@ class Lists extends Component {
 Lists.propTypes = {
     cart: PropTypes.array.isRequired,
     updateCart: PropTypes.func.isRequired,
+    showToast: PropTypes.func.isRequired,
 };
 
 export default Lists;

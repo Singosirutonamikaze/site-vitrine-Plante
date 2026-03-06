@@ -6,7 +6,7 @@ import PlantItem from './PlantItem'
 import Categories from './Categories'
 
 
-function ShoppingList({ cart, updateCart }) {
+function ShoppingList({ cart, updateCart, showToast }) {
 	const [activeCategory, setActiveCategory] = useState('')
 	const [search, setSearch] = useState('')
 	const categories = plantList.reduce(
@@ -28,6 +28,7 @@ function ShoppingList({ cart, updateCart }) {
 		} else {
 			updateCart([...cart, { name, price, amount: 1 }])
 		}
+		showToast(name)
 	}
 
 	const filteredList = plantList.filter(({ name, category }) => {
@@ -99,6 +100,7 @@ ShoppingList.propTypes = {
 		amount: PropTypes.number,
 	})).isRequired,
 	updateCart: PropTypes.func.isRequired,
+	showToast: PropTypes.func.isRequired,
 };
 
 export default ShoppingList;

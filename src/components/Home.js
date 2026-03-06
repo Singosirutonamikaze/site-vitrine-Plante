@@ -1,18 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { plantList } from '../data/PlantLists';
 import '../css/Home.css';
 
-function Home({ cart, updateCart }) {
+function Home({ cart, updateCart, showToast }) {
   const bestSellers = plantList.filter((p) => p.bestSale);
-  const [toast, setToast] = useState(null);
-
-  useEffect(() => {
-    if (!toast) return;
-    const timer = setTimeout(() => setToast(null), 3000);
-    return () => clearTimeout(timer);
-  }, [toast]);
 
   const addToCart = (name, price) => {
     const existing = cart.find((item) => item.name === name);
@@ -23,17 +16,11 @@ function Home({ cart, updateCart }) {
     } else {
       updateCart([...cart, { name, price, amount: 1 }]);
     }
-    setToast(name);
+    showToast(name);
   };
 
   return (
     <div className='lmj-home'>
-      {toast && (
-        <div className='lmj-toast'>
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <span><strong>{toast}</strong> ajouté au panier !</span>
-        </div>
-      )}
       <div className='lmj-home-hero'>
         {/* Panel gauche — clair */}
         <div className='lmj-hero-left'>
@@ -113,6 +100,7 @@ function Home({ cart, updateCart }) {
 Home.propTypes = {
   cart: PropTypes.array.isRequired,
   updateCart: PropTypes.func.isRequired,
+  showToast: PropTypes.func.isRequired,
 };
 
 export default Home;

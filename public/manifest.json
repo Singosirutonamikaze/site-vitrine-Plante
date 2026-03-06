@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PlanteSale",
+  "name": "Votre application de vente de plantes",
   "icons": [
     {
       "src": "favicon.ico",

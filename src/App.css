@@ -56,3 +56,42 @@ body {
         padding: 2rem 1.4rem;
     }
 }
+
+
+/* ── TOAST NOTIFICATION (global) ─────────────────────────── */
+
+.lmj-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #16a34a;
+    color: #fff;
+    padding: 0.85rem 1.4rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(22, 163, 74, 0.35);
+    font-size: 1.4rem;
+    font-weight: 500;
+    white-space: nowrap;
+    animation: lmj-toast-in 0.3s ease;
+}
+
+.lmj-toast ion-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+@keyframes lmj-toast-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(1.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
